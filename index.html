@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Play Crash MZN</title>
+  <style>
+    body {
+      background: radial-gradient(circle at top, #061027, #03060f 80%);
+      color: #fff;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(90deg, #001a33, #002b4d);
+      padding: 15px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffd700;
+      text-shadow: 0 0 15px #ffd700, 0 0 25px #00bfff;
+      box-shadow: 0 0 20px rgba(0, 191, 255, 0.4);
+      border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    .alerta {
+      background: rgba(0, 10, 30, 0.6);
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      font-size: 16px;
+      line-height: 1.6;
+      border: 1px solid rgba(255, 215, 0, 0.4);
+      box-shadow: 0 0 25px rgba(0, 191, 255, 0.2);
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      animation: pulse 1.5s infinite;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn-ouro {
+      background: linear-gradient(90deg, #ff0000, #ffbb00);
+      box-shadow: 0 0 25px #ffbb00;
+    }
+
+    .btn-ouro:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 35px #ffcc33;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.07); }
+      100% { transform: scale(1); }
+    }
+
+    .sinais-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin: 30px auto;
+      max-width: 900px;
+    }
+
+    .sinal {
+      font-size: 18px;
+      font-weight: bold;
+      width: 130px;
+      padding: 18px 0;
+      border-radius: 10px;
+      color: #fff;
+      text-shadow: 0 0 8px rgba(255,255,255,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s;
+      background: linear-gradient(145deg, #0044aa, #001f55);
+      box-shadow: 0 0 25px rgba(0, 191, 255, 0.5);
+    }
+
+    .sinal:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 35px #ffd700;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 15px;
+      font-size: 14px;
+      color: #aaa;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .assinatura {
+      font-size: 13px;
+      color: #777;
+      margin-top: 5px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>🚀 Play Crash MZN 🚀</header>
+
+  <section>
+    <div class="alerta">
+      <strong>Caro jogador:</strong><br>
+      Para garantir o acesso total aos sinais, crie sua conta na plataforma recomendada pelo botão abaixo.<br>
+      Caso já tenha registrado anteriormente, não é necessário criar novamente.
+    </div>
+
+    <a href="https://www.megagamelive.com/affiliates/?btag=2115347" class="btn btn-ouro">🔥 Criar Conta</a>
+  </section>
+
+  <section>
+    <h2>📊 Entradas Confirmadas</h2>
+    <div id="sinais" class="sinais-container"></div>
+
+    <a href="https://wa.me/?text=Estou%20usando%20o%20sistema%20Play%20Crash%20MZN%20para%20prever%20entradas%20no%20Aviator,%20recomendo%20muito!%20🚀"
+       class="btn btn-ouro">📲 Compartilhe o sistema Play Crash MZN</a>
+  </section>
+
+  <section>
+    <p><strong>Aviso:</strong> Somente para maiores de 18 anos. Jogue com responsabilidade.</p>
+  </section>
+
+  <footer>
+    © 2025 - Todos os direitos reservados a <strong>Biorny.S.M</strong><br>
+    <div class="assinatura">Sistema de apoio aos jogadores desenvolvido por Biorny.S.M</div>
+  </footer>
+
+  <script>
+    const sinaisContainer = document.getElementById("sinais");
+
+    function gerarSinais() {
+      sinaisContainer.innerHTML = "";
+
+      const agora = new Date();
+      const sinais = [];
+
+      // gera sinais para os próximos 24 minutos
+      for (let i = 1; i <= 24; i++) {
+        const futuro = new Date(agora.getTime() + i * 60000); // 1 minuto de diferença
+        const h = String(futuro.getHours()).padStart(2, "0");
+        const m = String(futuro.getMinutes()).padStart(2, "0");
+        const s = String(futuro.getSeconds()).padStart(2, "0");
+        sinais.push(`${h}:${m}:${s}`);
+      }
+
+      // mostra todos em ordem crescente horizontal
+      sinais.forEach(hora => {
+        const div = document.createElement("div");
+        div.className = "sinal";
+        div.textContent = hora;
+        sinaisContainer.appendChild(div);
+      });
+    }
+
+    gerarSinais();
+    setInterval(gerarSinais, 60000); // atualiza a cada minuto
+  </script>
+
+</body>
+</html>
